@@ -1,0 +1,21 @@
+<div class="panel panel-primary">
+    <div class="panel-heading"><strong>{{repo.name}}</strong></div>
+    <div class="panel-body">
+        {{error}}
+
+        <div>Issues: {{repo.open_issues_count}}</div>
+
+        <h3>Collaborators</h3>
+        <div>
+            <ul>
+                <li data-ng-repeat="user in repo.collaborators">
+                    <img src="{{user.avatar_url}}" alt="{{user.login}}" width="48">
+                    {{user.login}}
+                </li>
+            </ul>
+        </div>
+
+        <a href="#/main">Terug naar Zoeken</a>
+        <a href="#/user/{{repo.owner.login}}">Terug naar {{repo.owner.login}}</a>
+    </div>
+</div>
